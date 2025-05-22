@@ -5,3 +5,41 @@
 html {
   scroll-behavior: smooth;
 }
+
+.card-shine:hover {
+  box-shadow: 0 0 32px 4px rgba(129,140,248,0.25), 0 0 0 2px #818cf8;
+  transition: box-shadow 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.15) 100%
+  );
+  transition: opacity 0.4s;
+  opacity: 0;
+  pointer-events: none;
+}
+.card-shine:hover::after {
+  opacity: 1;
+  animation: shine 1s forwards;
+}
+@keyframes shine {
+  from {
+    transform: translate(-100%, -100%) rotate(10deg);
+  }
+  to {
+    transform: translate(100%, 100%) rotate(10deg);
+  }
+}

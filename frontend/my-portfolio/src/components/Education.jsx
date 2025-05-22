@@ -1,16 +1,17 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const educationData = [
   {
     institution: "Dr. A.P.J Abdul Kalam Technical University, Lucknow",
     duration: "Sep 2022 - May 2026",
     degree: "Bachelor of Technology in Computer Science",
+    location: "Lucknow, India",
   },
   {
     institution: "Rani Laxmi Bai Memorial School, Lucknow",
     duration: "April 2018 - Mar 2022",
     degree: "High School and Intermediate",
+    location: "Lucknow, India",
   },
 ];
 
@@ -34,59 +35,66 @@ const certificationsData = [
   },
 ];
 
+
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-gray-900 text-gray-200">
-      <div className="container mx-auto px-6 md:px-20">
-        {/* Education Section */}
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl font-bold text-center text-indigo-400 mb-10"
+    <section id="education" className="py-20 bg-black text-gray-200 min-h-screen">
+      <div className="container mx-auto px-6 md:px-20 max-w-6xl">
+        {/* Education Section Heading */}
+        <h2
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-left mb-10 leading-tight
+                     sticky top-0 bg-black py-4 z-20"
         >
-          Education
-        </motion.h2>
+          <span className="text-white">ACADEMIC</span> <br />
+          <span className="text-gray-400">BACKGROUND</span>
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+        <div className="grid grid-cols-1 gap-10 mb-12">
           {educationData.map((edu, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-gray-800 shadow-lg rounded-lg p-6"
+              className="
+                bg-gray-800 rounded-xl p-6 flex flex-col justify-between w-full
+                border border-transparent transition-all duration-300 ease-in-out
+                hover:bg-gray-700 hover:scale-[1.01] hover:-translate-y-1
+                hover:border-indigo-600 hover:shadow-indigo-500/50 hover:shadow-2xl
+                transform-gpu
+              "
             >
-              <h3 className="text-xl font-bold text-gray-200">{edu.institution}</h3>
-              <p className="text-sm text-indigo-400">{edu.duration}</p>
-              <p className="text-gray-400 mt-2">{edu.degree}</p>
-            </motion.div>
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-bold text-white">{edu.institution}</h3>
+                <p className="text-sm text-gray-400">{edu.duration}</p>
+              </div>
+              <p className="text-orange-400 mt-1">{edu.degree}</p>
+              <p className="text-gray-400 text-sm mt-1">{edu.location}</p>
+            </div>
           ))}
         </div>
 
-        {/* Certifications Section */}
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl font-bold text-center text-indigo-400 mb-10"
+        {/* Certifications Section Heading */}
+        <h2
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-left mb-10 leading-tight
+                     sticky top-0 bg-black py-4 z-20"
         >
-          Certifications & Training
-        </motion.h2>
+          <span className="text-white">CERTIFICATIONS</span>
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {certificationsData.map((cert, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-gray-800 shadow-lg rounded-lg p-6"
+              className="
+                bg-gray-800 rounded-xl p-6 flex flex-col justify-between w-full
+                border border-transparent transition-all duration-300 ease-in-out
+                hover:bg-gray-700 hover:scale-[1.01] hover:-translate-y-1
+                hover:border-indigo-600 hover:shadow-indigo-500/50 hover:shadow-2xl
+                transform-gpu
+              "
             >
-              <h3 className="text-xl font-bold text-gray-200">{cert.title}</h3>
-              {cert.date && <p className="text-sm text-indigo-400">{cert.date}</p>}
-              {cert.description && <p className="text-gray-400 mt-2">{cert.description}</p>}
-            </motion.div>
+              <h3 className="text-xl font-bold text-white mb-1">{cert.title}</h3>
+              <p className="text-sm text-gray-400">{cert.issuer}</p>
+              <p className="text-sm text-gray-400 mt-1">{cert.date}</p>
+            </div>
           ))}
         </div>
       </div>
