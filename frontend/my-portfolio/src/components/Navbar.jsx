@@ -14,7 +14,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects','education', 'contact'];
       let currentActive = 'home';
       let minDistance = Infinity;
 
@@ -118,6 +118,24 @@ const Navbar = () => {
             Projects
           </span>
         </Link>
+
+
+        {/* Education Icon - NEW */}
+        <Link
+          to="education"
+          smooth={true}
+          duration={500}
+          onClick={() => handleLinkClick('education')}
+          className={`group relative flex items-center justify-center w-12 h-12 rounded-full cursor-pointer
+                      ${activeSection === 'education' ? 'bg-gray-700 border-2 border-gray-500' : 'bg-transparent border border-gray-800'}
+                      text-white hover:bg-gray-800 hover:border-gray-600 transition-all duration-300 ease-in-out transform hover:scale-110`}
+          aria-label="Education"
+        >
+          <FaFileAlt size={22} className={activeSection === 'education' ? 'text-white' : 'text-gray-400 group-hover:text-white'} />
+          <span className="absolute top-full mt-4 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+            Education
+          </span>
+        </Link>
 
         {/* Contact Icon */}
         <Link
