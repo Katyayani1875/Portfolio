@@ -9,7 +9,6 @@ import { errorHandler } from './utils/errorHandler.js';
 import contactRoutes from './routes/contactRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
 import skillRoutes from './routes/skillRoutes.js';
-import educationRoutes from './routes/educationRoutes.js';
 import experienceRoutes from './routes/experienceRoutes.js';
 
 dotenv.config(); // Load environment variables
@@ -34,7 +33,6 @@ app.use((req, res, next) => {
 app.use('/api/contact', contactRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/skills', skillRoutes);
-app.use('/api/education', educationRoutes);
 app.use('/api/experience', experienceRoutes);
 
 // Error Handling Middleware
