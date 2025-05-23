@@ -1,6 +1,7 @@
   import React, { useEffect, useState } from "react";
   import { motion, useAnimation } from "framer-motion";
-  import axios from "axios";
+  // import axios from "axios";
+  import instance from "../api/axiosConfig";
 
   // SkillTag component remains unchanged, as no animation removal was requested for it.
  const SkillTag = ({ skillName }) => (
@@ -43,7 +44,7 @@
       const fetchSkills = async () => {
         try {
           // Fetching from backend API as requested
-          const response = await axios.get("/api/skills");
+          const response = await instance.get("/api/skills");
 
           // Group skills by category
           const skillsByCategory = response.data.reduce((acc, skill) => {
