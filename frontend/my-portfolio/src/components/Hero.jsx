@@ -113,14 +113,18 @@ const Hero = () => {
           className="lg:col-span-1 bg-black rounded-2xl shadow-none p-8 flex flex-col items-center text-center space-y-6 border border-transparent
                       transition-all duration-300 ease-in-out hover:bg-[#1a1a1a] hover:border-indigo-600 hover:shadow-indigo-500/50 hover:shadow-2xl hover:scale-[1.01]"
         >
-          <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg">
-            <img
-              src={profilePic}
-              alt="Katyayani Mishra"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
+  <div className="bg-gradient-to-br from-orange-600 to-red-700 p-1 rounded-3xl shadow-xl">
+  <div className="w-[240px] h-[270px] overflow-hidden rounded-2xl">
+    <img
+      src={profilePic}
+      alt="Katyayani Mishra"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+
           <h2 className="text-3xl font-extrabold text-white leading-tight">
             Katyayani Mishra
           </h2>
@@ -156,19 +160,19 @@ const Hero = () => {
         {/* Right Main Content */}
         <div className="lg:col-span-2 space-y-8">
           {/* Hero Text and Description Card - "SOFTWARE DEVELOPER" card */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            // Start with black background, reveal a darker gray on hover
-            className="bg-black rounded-2xl shadow-none p-8 border border-transparent
-                        transition-all duration-300 ease-in-out hover:bg-[#1a1a1a] hover:border-indigo-600 hover:shadow-indigo-500/50 hover:shadow-2xl hover:scale-[1.01]"
-          >
+         <motion.div
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="bg-black hover-glow rounded-2xl shadow-none p-8 border border-transparent
+              transition-all duration-300 ease-in-out hover:bg-[#1a1a1a] hover:border-indigo-600 hover:shadow-indigo-500/50 hover:shadow-2xl hover:scale-[1.01]"
+>
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
               SOFTWARE <br />
               <span className="text-gray-400">DEVELOPER</span>
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl text-gray-300">
+            <p className=" max-w-2xl text-gray-300">
               Results-driven Full Stack Developer specializing in the MERN stack with a proven track record of creating scalable, user-centric web applications. Adept at solving complex problems through Data Structures and Algorithms (DSA) using Java, continuously improving problem-solving skills through platforms like LeetCode. Passionate about leveraging cutting-edge technology to deliver impactful, high-performance solutions.
             </p>
           </motion.div>

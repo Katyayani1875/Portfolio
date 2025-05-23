@@ -43,3 +43,42 @@ html {
     transform: translate(100%, 100%) rotate(10deg);
   }
 }
+
+
+@keyframes shine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.hover-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transition: all 0.4s ease-in-out;
+}
+
+.hover-glow:hover::before {
+  animation: shine 2.2s linear forwards;
+}
+.hover-glow-effect:hover {
+  animation: glow 1.5s infinite ease-in-out;
+  border-color: rgb(99 102 241); /* Tailwind's indigo-500 */
+}
