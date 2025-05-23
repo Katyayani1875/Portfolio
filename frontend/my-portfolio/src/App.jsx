@@ -18,7 +18,7 @@ function App() {
       <Skills />
       <Projects />
       <Education/>
-      <Contact/>
+      <Contact/> 
     </>
   );
 }
