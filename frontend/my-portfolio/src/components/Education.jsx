@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Importing motion for animations
 
 const educationData = [
   {
@@ -39,15 +40,20 @@ const certificationsData = [
 const Education = () => {
   return (
     <section id="education" className="py-20 bg-black text-gray-200 min-h-screen">
-      <div className="container mx-auto px-6 md:px-20 max-w-6xl">
+      <div className="container px-6 md:px-20 max-w-6xl">
         {/* Education Section Heading */}
-        <h2
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-left mb-10 leading-tight
-                     sticky top-0 bg-black py-4 z-20"
-        >
-          <span className="text-white">ACADEMIC</span> <br />
-          <span className="text-gray-400">BACKGROUND</span>
-        </h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -100 }} // Start further left
+            whileInView={{ opacity: 1, x: 0 }} // Animate to its position when in view
+            transition={{ duration: 1, ease: "easeOut" }} // Added easeOut effect
+            viewport={{ once: true, amount: 0.5 }} // Animate only once when 50% in view
+            // Adjusted text styling, alignment, and added sticky positioning
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-left mb-10 leading-tight
+                      sticky  bg-black py-4 " // Made sticky, top-0, higher z-index, and added background/padding for readability
+          >
+            <span className="text-white">ACADEMIC</span> <br /> {/* White text for "TECHNICAL" */}
+            <span className="text-gray-400">QUALIFICATION</span> {/* Gray-400 text for "SKILLS" */}
+          </motion.h2>
 
         <div className="grid grid-cols-1 gap-10 mb-12">
           {educationData.map((edu, index) => (
@@ -57,7 +63,7 @@ const Education = () => {
                 bg-gray-800 rounded-xl p-6 flex flex-col justify-between w-full
                 border border-transparent transition-all duration-300 ease-in-out
                 hover:bg-gray-700 hover:scale-[1.01] hover:-translate-y-1
-                hover:border-indigo-600 hover:shadow-indigo-500/50 hover:shadow-2xl
+                hover:border-indigo-700 hover:shadow-indigo-500/50 hover:shadow-2xl
                 transform-gpu
               "
             >
@@ -72,12 +78,17 @@ const Education = () => {
         </div>
 
         {/* Certifications Section Heading */}
-        <h2
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-left mb-10 leading-tight
-                     sticky top-0 bg-black py-4 z-20"
-        >
-          <span className="text-white">CERTIFICATIONS</span>
-        </h2>
+         <motion.h2
+                   initial={{ opacity: 0, x: -100 }} // Start further left
+                   whileInView={{ opacity: 1, x: 0 }} // Animate to its position when in view
+                   transition={{ duration: 1, ease: "easeOut" }} // Added easeOut effect
+                   viewport={{ once: true, amount: 0.5 }} // Animate only once when 50% in view
+                   // Adjusted text styling, alignment, and added sticky positioning
+                   className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-left mb-10 leading-tight
+                             sticky  bg-black py-4 " // Made sticky, top-0, higher z-index, and added background/padding for readability
+                 >
+                   <span className="text-white">CERTIFICATIONS</span>  {/* Gray-400 text for "SKILLS" */}
+                 </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {certificationsData.map((cert, index) => (
