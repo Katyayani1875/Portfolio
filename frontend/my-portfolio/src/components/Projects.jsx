@@ -1,6 +1,7 @@
   import React, { useEffect, useState } from "react";
   import { motion,animate } from "framer-motion"; // Re-added motion import
   import axios from "axios";
+  import instance from "../api/axiosConfig";
 
   const Projects = () => {
     const [projects, setProjects] = useState([]);
@@ -10,7 +11,7 @@
     useEffect(() => {
       const fetchProjects = async () => {
         try {
-          const response = await axios.get("/api/projects");
+          const response = await instance.get("/api/projects");
         
           setProjects(response.data);
         } catch (err) {
